@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.10.5 on win32)" generated="20230219 11:35:57.817" rpa="false" schemaversion="3">
+<suite id="s1" name="RF Visit-Hawaii" source="C:\Users\Cham\PycharmProjects\RF_Visit-Hawaii">
+<suite id="s1-s1" name="Test API" source="C:\Users\Cham\PycharmProjects\RF_Visit-Hawaii\Test_API">
+<suite id="s1-s1-s1" name="TestHawaii" source="C:\Users\Cham\PycharmProjects\RF_Visit-Hawaii\Test_API\TestHawaii.robot">
+<test id="s1-s1-s1-t1" name="Get a particular touristic Hawaiian place" line="25">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mySession</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230219 11:35:57.997" level="INFO">Creating Session using : alias=mySession, url=http://localhost:8080, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230219 11:35:57.997" endtime="20230219 11:35:57.997"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mySession</arg>
+<arg>/places</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230219 11:35:58.036" level="INFO">GET Request : url=http://localhost:8080/places 
+ path_url=/places 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230219 11:35:58.051" level="INFO">GET Response : url=http://localhost:8080/places 
+ status=200, reason= 
+ headers={'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Type': 'application/hal+json', 'Transfer-Encoding': 'chunked', 'Date': 'Sun, 19 Feb 2023 10:35:58 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={
+  "_embedded" : {
+    "places" : [ {
+      "name" : "Plantation de café à Kona",
+      "island" : "Hawaï",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Visite du cratère Diamond Head situé à l'est d'Honolulu",
+      "longDescription" : "Description détaillée !",
+      "gallery" : null,
+      "price" : 59.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/246"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/246"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/247"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/247"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe plage au sud de l'île de Maui.",
+      "longDescription" : "",
+      "gallery" : [ "monImage.jpg", "salut" ],
+      "price" : 10.5,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/257"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/257"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "https://www.mceconferences.com/wp-content/uploads/hawaii-oahu-north-shore.jpg",
+      "description" : "Plage située au nord de l'île d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 44.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/289"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/289"
+        }
+      }
+    }, {
+      "name" : "Ala Moana Center",
+      "island" : "Oahu",
+      "image" : "https://www.alamoanacenter.com/content/dam/rw-2/images/campaign-images/mini-campaigns/TravelTradeMedia-AlaMoana-Hero-767x476-mobile.jpg",
+      "description" : "Centre commercial à Honolulu",
+      "longDescription" : " ",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/290"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/290"
+        }
+      }
+    }, {
+      "name" : "Black Rock Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/291"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/291"
+        }
+      }
+    }, {
+      "name" : "Maalaea",
+      "island" : "Maui",
+      "image" : "https://www.islandsothebysrealty.com/uploads/Maalaea%20Real%20Estate.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 89.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/292"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/292"
+        }
+      }
+    }, {
+      "name" : "Waikiki Beach",
+      "island" : "Oahu",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/d/d6/Waikiki_Beach.jpg",
+      "description" : "Superbe dîner aux chandelles pour apprécier le coucher de soleil",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/321"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/321"
+        }
+      }
+    }, {
+      "name" : "Twin Falls",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Cascades jumelles dans la forêt au nord-est de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/353"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/353"
+        }
+      }
+    }, {
+      "name" : "Hana Road",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe route le long de la côte est de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 119.99,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/354"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/354"
+        }
+      }
+    }, {
+      "name" : "Trail of pictures around Oahu",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Randonnée des meilleurs spots pour photographier des souvenirs mémorables...",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 79.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/385"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/385"
+        }
+      }
+    }, {
+      "name" : "Koko Head Crater",
+      "island" : "Oahu",
+      "image" : "https://www.smartrippers.com/files/2020-01/koko-crater-2100.jpg?171f62d8b6",
+      "description" : "Cratère au sud-est de l'île d'Oahu",
+      "longDescription" : "Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis permutatione iumentorum emensis venit Petobionem oppidum Noricorum, ubi reseratae sunt insidiarum latebrae omnes, et Barbatio repente apparuit comes, qui sub eo domesticis praefuit, cum Apodemio agente in rebus milites ducens, quos beneficiis suis oppigneratos elegerat imperator certus nec praemiis nec miseratione ulla posse deflecti.\n\nVerum ad istam omnem orationem brevis est defensio. Nam quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit primum ipsius pudore, deinde etiam patris diligentia disciplinaque munita. Qui ut huic virilem togam deditšnihil dicam hoc loco de me; tantum sit, quantum vos existimatis; hoc dicam, hunc a patre continuo ad me esse deductum; nemo hunc M. Caelium in illo aetatis flore vidit nisi aut cum patre aut mecum aut in M. Crassi castissima domo, cum artibus honestissimis erudiretur.\n\nIamque lituis cladium concrepantibus internarum non celate ut antea turbidum saeviebat ingenium a veri consideratione detortum et nullo inpositorum vel conpositorum fidem sollemniter inquirente nec discernente a societate noxiorum insontes velut exturbatum e iudiciis fas omne discessit, et causarum legitima silente defensione carnifex rapinarum sequester et obductio capitum et bonorum ubique multatio versabatur per orientales provincias, quas recensere puto nunc oportunum absque Mesopotamia digesta, cum bella Parthica dicerentur, et Aegypto, quam necessario aliud reieci ad tempus.",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/419"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/419"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Surf sur la North Shore",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 49.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/449"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/449"
+        }
+      }
+    }, {
+      "name" : "Molokini",
+      "island" : "Maui",
+      "image" : "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/134620_Maui_MolokiniCrater_1182.jpg",
+      "description" : "Cratère immergé au large de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 124.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/481"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/481"
+        }
+      }
+    }, {
+      "name" : "Destination TEST",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage située à l'est de l'île d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/833"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/833"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/places"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile/places"
+    },
+    "search" : {
+      "href" : "http://localhost:8080/places/search"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 15,
+    "totalPages" : 1,
+    "number" : 0
+  }
+} 
+ </msg>
+<msg timestamp="20230219 11:35:58.051" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230219 11:35:57.998" endtime="20230219 11:35:58.051"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.headers}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230219 11:35:58.052" level="INFO">{'Vary': 'Origin, Access-Control-Request-Method, Access-Control-Request-Headers', 'X-Content-Type-Options': 'nosniff', 'X-XSS-Protection': '1; mode=block', 'Cache-Control': 'no-cache, no-store, max-age=0, must-revalidate', 'Pragma': 'no-cache', 'Expires': '0', 'Content-Type': 'application/hal+json', 'Transfer-Encoding': 'chunked', 'Date': 'Sun, 19 Feb 2023 10:35:58 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'}</msg>
+<status status="PASS" starttime="20230219 11:35:58.052" endtime="20230219 11:35:58.052"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20230219 11:35:58.053" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20230219 11:35:58.053" endtime="20230219 11:35:58.053"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230219 11:35:58.054" level="INFO">200</msg>
+<status status="PASS" starttime="20230219 11:35:58.054" endtime="20230219 11:35:58.054"/>
+</kw>
+<kw name="Should Not Be Empty" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<msg timestamp="20230219 11:35:58.056" level="INFO">Length is 9859</msg>
+<status status="PASS" starttime="20230219 11:35:58.056" endtime="20230219 11:35:58.056"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230219 11:35:58.057" level="INFO">{
+  "_embedded" : {
+    "places" : [ {
+      "name" : "Plantation de caf\xc3\xa9 \xc3\xa0 Kona",
+      "island" : "Hawa\xc3\xaf",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Visite du crat\xc3\xa8re Diamond Head situ\xc3\xa9 \xc3\xa0 l'est d'Honolulu",
+      "longDescription" : "Description d\xc3\xa9taill\xc3\xa9e !",
+      "gallery" : null,
+      "price" : 59.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/246"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/246"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/247"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/247"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe plage au sud de l'\xc3\xaele de Maui.",
+      "longDescription" : "",
+      "gallery" : [ "monImage.jpg", "salut" ],
+      "price" : 10.5,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/257"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/257"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "https://www.mceconferences.com/wp-content/uploads/hawaii-oahu-north-shore.jpg",
+      "description" : "Plage situ\xc3\xa9e au nord de l'\xc3\xaele d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 44.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/289"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/289"
+        }
+      }
+    }, {
+      "name" : "Ala Moana Center",
+      "island" : "Oahu",
+      "image" : "https://www.alamoanacenter.com/content/dam/rw-2/images/campaign-images/mini-campaigns/TravelTradeMedia-AlaMoana-Hero-767x476-mobile.jpg",
+      "description" : "Centre commercial \xc3\xa0 Honolulu",
+      "longDescription" : " ",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/290"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/290"
+        }
+      }
+    }, {
+      "name" : "Black Rock Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/291"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/291"
+        }
+      }
+    }, {
+      "name" : "Maalaea",
+      "island" : "Maui",
+      "image" : "https://www.islandsothebysrealty.com/uploads/Maalaea%20Real%20Estate.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 89.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/292"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/292"
+        }
+      }
+    }, {
+      "name" : "Waikiki Beach",
+      "island" : "Oahu",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/d/d6/Waikiki_Beach.jpg",
+      "description" : "Superbe d\xc3\xaener aux chandelles pour appr\xc3\xa9cier le coucher de soleil",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/321"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/321"
+        }
+      }
+    }, {
+      "name" : "Twin Falls",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Cascades jumelles dans la for\xc3\xaat au nord-est de l'\xc3\xaele de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/353"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/353"
+        }
+      }
+    }, {
+      "name" : "Hana Road",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe route le long de la c\xc3\xb4te est de l'\xc3\xaele de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 119.99,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/354"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/354"
+        }
+      }
+    }, {
+      "name" : "Trail of pictures around Oahu",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Randonn\xc3\xa9e des meilleurs spots pour photographier des souvenirs m\xc3\xa9morables...",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 79.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/385"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/385"
+        }
+      }
+    }, {
+      "name" : "Koko Head Crater",
+      "island" : "Oahu",
+      "image" : "https://www.smartrippers.com/files/2020-01/koko-crater-2100.jpg?171f62d8b6",
+      "description" : "Crat\xc3\xa8re au sud-est de l'\xc3\xaele d'Oahu",
+      "longDescription" : "Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis permutatione iumentorum emensis venit Petobionem oppidum Noricorum, ubi reseratae sunt insidiarum latebrae omnes, et Barbatio repente apparuit comes, qui sub eo domesticis praefuit, cum Apodemio agente in rebus milites ducens, quos beneficiis suis oppigneratos elegerat imperator certus nec praemiis nec miseratione ulla posse deflecti.\n\nVerum ad istam omnem orationem brevis est defensio. Nam quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit primum ipsius pudore, deinde etiam patris diligentia disciplinaque munita. Qui ut huic virilem togam dedit\xc5\xa1nihil dicam hoc loco de me; tantum sit, quantum vos existimatis; hoc dicam, hunc a patre continuo ad me esse deductum; nemo hunc M. Caelium in illo aetatis flore vidit nisi aut cum patre aut mecum aut in M. Crassi castissima domo, cum artibus honestissimis erudiretur.\n\nIamque lituis cladium concrepantibus internarum non celate ut antea turbidum saeviebat ingenium a veri consideratione detortum et nullo inpositorum vel conpositorum fidem sollemniter inquirente nec discernente a societate noxiorum insontes velut exturbatum e iudiciis fas omne discessit, et causarum legitima silente defensione carnifex rapinarum sequester et obductio capitum et bonorum ubique multatio versabatur per orientales provincias, quas recensere puto nunc oportunum absque Mesopotamia digesta, cum bella Parthica dicerentur, et Aegypto, quam necessario aliud reieci ad tempus.",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/419"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/419"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Surf sur la North Shore",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 49.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/449"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/449"
+        }
+      }
+    }, {
+      "name" : "Molokini",
+      "island" : "Maui",
+      "image" : "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/134620_Maui_MolokiniCrater_1182.jpg",
+      "description" : "Crat\xc3\xa8re immerg\xc3\xa9 au large de l'\xc3\xaele de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 124.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/481"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/481"
+        }
+      }
+    }, {
+      "name" : "Destination TEST",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage situ\xc3\xa9e \xc3\xa0 l'est de l'\xc3\xaele d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/833"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/833"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/places"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile/places"
+    },
+    "search" : {
+      "href" : "http://localhost:8080/places/search"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 15,
+    "totalPages" : 1,
+    "number" : 0
+  }
+}</msg>
+<status status="PASS" starttime="20230219 11:35:58.056" endtime="20230219 11:35:58.057"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${JSON_str}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230219 11:35:58.059" level="INFO">${JSON_str} = {
+  "_embedded" : {
+    "places" : [ {
+      "name" : "Plantation de caf\xc3\xa9 \xc3\xa0 Kona",
+      "island" : "Hawa\xc3\xaf",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/l...</msg>
+<status status="PASS" starttime="20230219 11:35:58.058" endtime="20230219 11:35:58.059"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${JSON_str}</arg>
+<arg>Makena Beach</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230219 11:35:58.060" endtime="20230219 11:35:58.060"/>
+</kw>
+<kw name="To Json" library="RequestsLibrary">
+<var>${JSON_converted_response}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<msg timestamp="20230219 11:35:58.061" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg timestamp="20230219 11:35:58.065" level="INFO">To JSON using : content={
+  "_embedded" : {
+    "places" : [ {
+      "name" : "Plantation de café à Kona",
+      "island" : "Hawaï",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Visite du cratère Diamond Head situé à l'est d'Honolulu",
+      "longDescription" : "Description détaillée !",
+      "gallery" : null,
+      "price" : 59.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/246"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/246"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/247"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/247"
+        }
+      }
+    }, {
+      "name" : "Makena Beach",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe plage au sud de l'île de Maui.",
+      "longDescription" : "",
+      "gallery" : [ "monImage.jpg", "salut" ],
+      "price" : 10.5,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/257"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/257"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "https://www.mceconferences.com/wp-content/uploads/hawaii-oahu-north-shore.jpg",
+      "description" : "Plage située au nord de l'île d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 44.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/289"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/289"
+        }
+      }
+    }, {
+      "name" : "Ala Moana Center",
+      "island" : "Oahu",
+      "image" : "https://www.alamoanacenter.com/content/dam/rw-2/images/campaign-images/mini-campaigns/TravelTradeMedia-AlaMoana-Hero-767x476-mobile.jpg",
+      "description" : "Centre commercial à Honolulu",
+      "longDescription" : " ",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/290"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/290"
+        }
+      }
+    }, {
+      "name" : "Black Rock Beach",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/291"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/291"
+        }
+      }
+    }, {
+      "name" : "Maalaea",
+      "island" : "Maui",
+      "image" : "https://www.islandsothebysrealty.com/uploads/Maalaea%20Real%20Estate.jpg",
+      "description" : "Plage au sud de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 89.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/292"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/292"
+        }
+      }
+    }, {
+      "name" : "Waikiki Beach",
+      "island" : "Oahu",
+      "image" : "https://upload.wikimedia.org/wikipedia/commons/d/d6/Waikiki_Beach.jpg",
+      "description" : "Superbe dîner aux chandelles pour apprécier le coucher de soleil",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/321"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/321"
+        }
+      }
+    }, {
+      "name" : "Twin Falls",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Cascades jumelles dans la forêt au nord-est de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/353"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/353"
+        }
+      }
+    }, {
+      "name" : "Hana Road",
+      "island" : "Maui",
+      "image" : "",
+      "description" : "Superbe route le long de la côte est de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 119.99,
+      "available" : false,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/354"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/354"
+        }
+      }
+    }, {
+      "name" : "Trail of pictures around Oahu",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Randonnée des meilleurs spots pour photographier des souvenirs mémorables...",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 79.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/385"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/385"
+        }
+      }
+    }, {
+      "name" : "Koko Head Crater",
+      "island" : "Oahu",
+      "image" : "https://www.smartrippers.com/files/2020-01/koko-crater-2100.jpg?171f62d8b6",
+      "description" : "Cratère au sud-est de l'île d'Oahu",
+      "longDescription" : "Pandente itaque viam fatorum sorte tristissima, qua praestitutum erat eum vita et imperio spoliari, itineribus interiectis permutatione iumentorum emensis venit Petobionem oppidum Noricorum, ubi reseratae sunt insidiarum latebrae omnes, et Barbatio repente apparuit comes, qui sub eo domesticis praefuit, cum Apodemio agente in rebus milites ducens, quos beneficiis suis oppigneratos elegerat imperator certus nec praemiis nec miseratione ulla posse deflecti.\n\nVerum ad istam omnem orationem brevis est defensio. Nam quoad aetas M. Caeli dare potuit isti suspicioni locum, fuit primum ipsius pudore, deinde etiam patris diligentia disciplinaque munita. Qui ut huic virilem togam deditšnihil dicam hoc loco de me; tantum sit, quantum vos existimatis; hoc dicam, hunc a patre continuo ad me esse deductum; nemo hunc M. Caelium in illo aetatis flore vidit nisi aut cum patre aut mecum aut in M. Crassi castissima domo, cum artibus honestissimis erudiretur.\n\nIamque lituis cladium concrepantibus internarum non celate ut antea turbidum saeviebat ingenium a veri consideratione detortum et nullo inpositorum vel conpositorum fidem sollemniter inquirente nec discernente a societate noxiorum insontes velut exturbatum e iudiciis fas omne discessit, et causarum legitima silente defensione carnifex rapinarum sequester et obductio capitum et bonorum ubique multatio versabatur per orientales provincias, quas recensere puto nunc oportunum absque Mesopotamia digesta, cum bella Parthica dicerentur, et Aegypto, quam necessario aliud reieci ad tempus.",
+      "gallery" : null,
+      "price" : 39.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/419"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/419"
+        }
+      }
+    }, {
+      "name" : "North Shore",
+      "island" : "Oahu",
+      "image" : "",
+      "description" : "Surf sur la North Shore",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 49.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/449"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/449"
+        }
+      }
+    }, {
+      "name" : "Molokini",
+      "island" : "Maui",
+      "image" : "https://cache-graphicslib.viator.com/graphicslib/page-images/742x525/134620_Maui_MolokiniCrater_1182.jpg",
+      "description" : "Cratère immergé au large de l'île de Maui",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 124.99,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/481"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/481"
+        }
+      }
+    }, {
+      "name" : "Destination TEST",
+      "island" : "Maui",
+      "image" : "https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg",
+      "description" : "Plage située à l'est de l'île d'Oahu",
+      "longDescription" : "",
+      "gallery" : null,
+      "price" : 0.0,
+      "available" : true,
+      "_links" : {
+        "self" : {
+          "href" : "http://localhost:8080/places/833"
+        },
+        "place" : {
+          "href" : "http://localhost:8080/places/833"
+        }
+      }
+    } ]
+  },
+  "_links" : {
+    "self" : {
+      "href" : "http://localhost:8080/places"
+    },
+    "profile" : {
+      "href" : "http://localhost:8080/profile/places"
+    },
+    "search" : {
+      "href" : "http://localhost:8080/places/search"
+    }
+  },
+  "page" : {
+    "size" : 20,
+    "totalElements" : 15,
+    "totalPages" : 1,
+    "number" : 0
+  }
+} </msg>
+<msg timestamp="20230219 11:35:58.065" level="INFO">To JSON using : pretty_print=False </msg>
+<msg timestamp="20230219 11:35:58.065" level="INFO">${JSON_converted_response} = {'_embedded': {'places': [{'name': 'Plantation de café à Kona', 'island': 'Hawaï', 'image': 'https://cdn.pixabay.com/photo/2015/04/23/14/26/lanikai-736111_1280.jpg', 'description': "Visite du cratère ...</msg>
+<status status="PASS" starttime="20230219 11:35:58.061" endtime="20230219 11:35:58.065"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${JSON_value}</var>
+<arg>${JSON_converted_response}</arg>
+<arg>['_embedded']['places'][1]['name']</arg>
+<arg>fail_on_empty=${True}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230219 11:35:58.092" level="INFO">${JSON_value} = ['Makena Beach']</msg>
+<status status="PASS" starttime="20230219 11:35:58.066" endtime="20230219 11:35:58.092"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${JSON_value}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230219 11:35:58.093" level="INFO">['Makena Beach']</msg>
+<status status="PASS" starttime="20230219 11:35:58.093" endtime="20230219 11:35:58.093"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${JSON_value}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230219 11:35:58.094" endtime="20230219 11:35:58.094"/>
+</kw>
+<status status="PASS" starttime="20230219 11:35:57.997" endtime="20230219 11:35:58.094"/>
+</test>
+<doc>Here it is the requests to test the Hawaii API
+The database is accessible by H2</doc>
+<status status="PASS" starttime="20230219 11:35:57.841" endtime="20230219 11:35:58.095"/>
+</suite>
+<status status="PASS" starttime="20230219 11:35:57.839" endtime="20230219 11:35:58.097"/>
+</suite>
+<status status="PASS" starttime="20230219 11:35:57.819" endtime="20230219 11:35:58.098"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="RF Visit-Hawaii">RF Visit-Hawaii</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test API">RF Visit-Hawaii.Test API</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="TestHawaii">RF Visit-Hawaii.Test API.TestHawaii</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230219 11:35:58.061" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+</errors>
+</robot>
